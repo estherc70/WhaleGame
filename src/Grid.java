@@ -14,6 +14,7 @@ public class Grid {
         whaleRow = whale.getRow();
     }
 
+
     public void printGrid() {
         for(String[] row : grid) {
             for(String c : row) {
