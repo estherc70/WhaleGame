@@ -25,9 +25,11 @@ public class Whale {
         userMove = scan.nextLine();
         if (userMove.equals("w")) {
             up = true;
+            down = false;
         }
         else if (userMove.equals("s")){
             down = true;
+            up = false;
         }
     }
 
