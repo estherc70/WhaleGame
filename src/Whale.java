@@ -5,36 +5,46 @@ public class Whale {
     private Scanner scan;
     private String userMove;
     private int row;
+    private boolean up;
+    private boolean down;
+
     public Whale() {
         whale = "\uD83D\uDC0B";
         scan = new Scanner(System.in);
         row = 2;
+        up = false;
+        down = false;
     }
 
     public String getWhale() {
         return whale;
     }
 
-    public String moveWhale() {
+    public void askForMove() {
         System.out.print("Enter move: ");
         userMove = scan.nextLine();
-        return userMove;
+        if (userMove.equals("w")) {
+            up = true;
+        }
+        else if (userMove.equals("s")){
+            down = true;
+        }
     }
 
-    public void setWhaleRow() {
-        if(userMove.equals("w")) {
-            row--;
-        }
-        else if (userMove.equals("S")) {
-            row++;
-        }
-        else {
-            System.out.println("Please enter a valid move!");
-        }
+    public boolean getUp() {
+        return up;
+    }
+
+    public boolean getDown() {
+        return down;
     }
 
     public int getRow() {
         return row;
+    }
+
+    public String getUserMove() {
+        return userMove;
     }
 }
 

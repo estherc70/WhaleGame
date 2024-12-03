@@ -1,7 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         Grid grid = new Grid();
-        grid.placeWhale(2,0);
-        grid.printGrid();
+        ClearConsole clear = new ClearConsole();
+        boolean x = false;
+        grid.placeWhale();
+        while (!x) {
+            grid.printGrid();
+            grid.moveWhale();
+            clear.clear();
+
+
+
+        }
     }
 }
