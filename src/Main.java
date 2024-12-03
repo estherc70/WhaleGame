@@ -8,9 +8,6 @@ public class Main {
             grid.printGrid();
             grid.moveWhale();
             clear.clear();
-
-
-
         }
     }
 }
