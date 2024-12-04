@@ -29,7 +29,7 @@ public class Whale {
         }
         else if (userMove.equals("s")){
             down = true;
-            up = true;
+            up = false;
         }
     }
 

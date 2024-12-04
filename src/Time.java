@@ -9,7 +9,9 @@ public class Time {
     TimerTask task = new TimerTask() {
         public void run() {
             if (secondsPassed < 10) {
+                System.out.println(secondsPassed);
                 secondsPassed ++;
+
             }
         }
     };
