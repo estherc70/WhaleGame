@@ -4,6 +4,7 @@ public class Main {
         ClearConsole clear = new ClearConsole();
         boolean x = false;
         grid.placeWhale();
+        grid.placeTrashs();
         Time time = new Time();
         time.start();
         while (!x) {
