@@ -6,21 +6,22 @@ public class Grid {
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"},
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"}};
     private Whale whale;
-    private Trash trash1;
     private Trash trash2;
     private Trash trash3;
     private int whaleRow;
     private int trash1Row;
     private int trash2Row;
     private int trash3Row;
+    private int trash1Col;
+    private int trash2Col;
+    private int trash3Col;
     private int prev;
 
-
+    Trash trash1 = new Trash();
     //constructor
     public Grid() {
         whale = new Whale();
         whaleRow = whale.getRow();
-        trash1 = new Trash();
         trash2 = new Trash();
         trash3 = new Trash();
         prev = 0;
@@ -59,6 +60,12 @@ public class Grid {
             setBlue(prev);
         }
         else {
+            if (whale.getUp()) {
+                whaleRow++;
+            }
+            else {
+                whaleRow--;
+            }
             System.out.println("Out of bound!\nEnter a new move!");
         }
     }
@@ -72,18 +79,9 @@ public class Grid {
         }
     }
 
-
-
-    public void placeTrash1(int row, int col) {
-        grid[row][col] = "";
+    public void placeTrashs() {
+        grid[trash1.getTrash1Row()][6] = trash1.getTrash();
+        grid[trash2.getTrash2Row()][6] = trash2.getTrash();
+        grid[trash3.getTrash3Row()][6] = trash3.getTrash();
     }
-
-    public void placeTrash2(int row, int col) {
-        grid[row][col] = "";
-    }
-
-    public void placeTrash3(int row, int col) {
-        grid[row][col] = "";
-    }
-
 }
