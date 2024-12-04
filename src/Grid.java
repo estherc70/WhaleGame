@@ -60,6 +60,12 @@ public class Grid {
             setBlue(prev);
         }
         else {
+            if (whale.getUp()) {
+                whaleRow++;
+            }
+            else {
+                whaleRow--;
+            }
             System.out.println("Out of bound!\nEnter a new move!");
         }
     }
