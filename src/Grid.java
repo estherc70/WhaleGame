@@ -13,6 +13,9 @@ public class Grid {
     private int trash1Row;
     private int trash2Row;
     private int trash3Row;
+    private int trash1Col;
+    private int trash2Col;
+    private int trash3Col;
     private int prev;
 
 
@@ -75,7 +78,9 @@ public class Grid {
 
 
     public void placeTrash1(int row, int col) {
-        grid[row][col] = "";
+        row = 0;
+        col = 0;
+        grid[row][col] = trash1.getTrash1();
     }
 
     public void placeTrash2(int row, int col) {

@@ -11,8 +11,6 @@ public class Time {
         public void run() {
             if (secondsPassed < 10) {
                 secondsPassed ++;
-                System.out.println("Seconds passed: " + secondsPassed);
-                System.out.println();
             }
         }
     };
