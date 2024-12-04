@@ -1,10 +1,19 @@
 public class Start {
 
+    private Grid grid;
+    private Time time;
+    private Score score;
+
     public Start() {
-        MainMenu();
+        grid = new Grid();
+        time = new Time();
+        score = new Score();
+
+        mainMenu();
+        startGame();
     }
 
-    public void MainMenu() {
+    public void mainMenu() {
         System.out.println("--------------------------------------------------------------");
         System.out.println("|                 \u001B[97mWelcome to the \u001B[1m\u001B[38;5;117mWhale Game\u001B[0m                  |");
         System.out.println("|                                                            |");
@@ -21,4 +30,15 @@ public class Start {
         System.out.println("--------------------------------------------------------------");
     }
 
+    public void startGame() {
+        grid.placeWhale();
+        grid.placeTrashs();
+        time.start();
+        score.setGameOver(true);
+        while (score.getGameOver()) {
+            grid.printGrid();
+            grid.moveWhale();
+            System.out.println();
+        }
+    }
 }
