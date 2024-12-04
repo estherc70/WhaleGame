@@ -78,9 +78,7 @@ public class Grid {
 
 
     public void placeTrash1(int row, int col) {
-        row = 0;
-        col = 0;
-        grid[row][col] = trash1.getTrash1();
+        grid[1][0] = trash1.getTrash1();
     }
 
     public void placeTrash2(int row, int col) {
