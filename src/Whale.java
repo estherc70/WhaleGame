@@ -23,6 +23,7 @@ public class Whale {
     public void askForMove() {
         System.out.print("Enter move: ");
         userMove = scan.nextLine();
+        userMove = userMove.toLowerCase();
         if (userMove.equals("w")) {
             up = true;
             down = false;

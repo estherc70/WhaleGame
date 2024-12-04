@@ -11,14 +11,21 @@ public class Score {
     private int highestScore;
     private int lives;
     private int seconds;
-    private RoundingHelper round;
+    private Time time;
+    private boolean gameOver;
 
     public Score() {
          score = 0;
          highestScore = 0;
          lives = 3;
-//         seconds = ; [TIMER CLASS NEEDED]
-        round = new RoundingHelper();
+         seconds = time.getSecondsPassed();
+         gameOver = false;
+    }
+
+    public int roundNumber(double input) { // helper class
+        int roundedNumber;
+        roundedNumber = (int) Math.rint(input);
+        return roundedNumber;
     }
 
     public int getScore() {
@@ -37,12 +44,26 @@ public class Score {
     }
 
     public void convertToPoints() {
-        score = round.RoundNumber(seconds * 3.14); //ROUNDING CLASS NEEDED
+        score = roundNumber(seconds * 3.14); //ROUNDING CLASS NEEDED
     }
 
     public void updateLives() {
 //        if (whalePosition == trashPosition) {
 //            lives--;
 //        }
+//        [set game over to true if lives = 0]
+
+    }
+
+    public boolean getGameOver() {
+     return gameOver;
+    }
+
+    public void setGameOver(boolean input) {
+        if (input == true) {
+            gameOver = true; // use for timer class when timer is over the set time (e.g 5 minutes)
+        } else {
+            gameOver = false;
+        }
     }
 }
