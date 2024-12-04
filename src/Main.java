@@ -5,6 +5,7 @@ public class Main {
         boolean x = false;
         grid.placeWhale();
         Time time = new Time();
+        time.start();
         while (!x) {
             grid.printGrid();
             grid.moveWhale();

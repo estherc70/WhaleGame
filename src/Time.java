@@ -3,10 +3,8 @@ import java.util.TimerTask;
 
 public class Time {
 
-    int secondsPassed = 0;
-    int finalSeconds = 0;
+    private int secondsPassed = 0;
 
-    Grid grid = new Grid();
     Timer myTimer = new Timer();
     TimerTask task = new TimerTask() {
         public void run() {
@@ -20,9 +18,4 @@ public class Time {
         myTimer.scheduleAtFixedRate(task,1000,1000);
     }
 
-    public void currentTime() {
-        myTimer.cancel();
-        finalSeconds += secondsPassed;
-        secondsPassed = 0;
-    }
 }
