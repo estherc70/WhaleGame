@@ -34,4 +34,24 @@ public class Trash {
         }
         return row;
     }
+
+    public int getTrash1Col() {
+        return (int) (Math.random()*3)+1;
+    }
+
+    public int getTrash2Col() {
+        int col = (int) (Math.random()*3) + 1;
+        while (col == getTrash1Col()) {
+            col = (int) (Math.random()*3) + 1;
+        }
+        return col;
+    }
+
+    public int getTrash3Col() {
+        int col = (int) (Math.random()*3) + 1;
+        while ((col == getTrash1Col()) || (col == getTrash2Col())) {
+            col = (int) (Math.random()*3) + 1;
+        }
+        return col;
+    }
 }

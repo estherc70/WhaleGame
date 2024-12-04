@@ -16,6 +16,7 @@ public class Grid {
     private int trash2Col;
     private int trash3Col;
     private int prev;
+    private int moves;
 
     Trash trash1 = new Trash();
     //constructor
@@ -25,7 +26,10 @@ public class Grid {
         trash2 = new Trash();
         trash3 = new Trash();
         prev = 0;
-
+        trash1Col = trash1.getTrash1Col();
+        trash2Col = trash2.getTrash2Col();
+        trash3Col = trash3.getTrash3Col();
+        moves = 0;
     }
 
 
@@ -46,6 +50,28 @@ public class Grid {
         grid[row][0] = "\uD83D\uDFE6";
     }
 
+    public void setBlue(int row, int col) {
+        grid[row][col] = "\uD83D\uDFE6";
+    }
+
+    public void setBlueTrash() {
+        setBlue(trash1Row,6);
+        setBlue(trash2Row,6);
+        setBlue(trash3Row,6);
+    }
+
+    public void setBlueTrash2() {
+        setBlue(trash1Row,trash1Col);
+        setBlue(trash2Row,trash2Col);
+        setBlue(trash3Row,trash3Col);
+    }
+
+    public void setBlueTrash3() {
+        setBlue(trash1Row,0);
+        setBlue(trash2Row,0);
+        setBlue(trash3Row,0);
+    }
+
     public void moveWhale() {
         prev = whaleRow;
         whale.askForMove();
@@ -58,6 +84,19 @@ public class Grid {
         if (!checkOutOfBound()) {
             placeWhale();
             setBlue(prev);
+            if (moves == 1) {
+                placeTrashs2();
+                setBlueTrash2();
+                moves++;
+            }else if (moves == 2){
+                setBlueTrash3();
+                placeTrashsInitial();
+                moves = 0;
+            } else {
+                placeTrashs1();
+                setBlueTrash();
+                moves++;
+            }
         }
         else {
             if (whale.getUp()) {
@@ -79,9 +118,24 @@ public class Grid {
         }
     }
 
-    public void placeTrashs() {
-        grid[trash1.getTrash1Row()][6] = trash1.getTrash();
-        grid[trash2.getTrash2Row()][6] = trash2.getTrash();
-        grid[trash3.getTrash3Row()][6] = trash3.getTrash();
+    public void placeTrashsInitial() {
+        trash1Row = trash1.getTrash1Row();
+        trash2Row = trash2.getTrash2Row();
+        trash3Row = trash3.getTrash3Row();
+        grid[trash1Row][6] = trash1.getTrash();
+        grid[trash2Row][6] = trash2.getTrash();
+        grid[trash3Row][6] = trash3.getTrash();
+    }
+
+    public void placeTrashs1() {
+        grid[trash1Row][trash1Col] = trash1.getTrash();
+        grid[trash2Row][trash2Col] = trash2.getTrash();
+        grid[trash3Row][trash3Col] = trash3.getTrash();
+    }
+
+    public void placeTrashs2() {
+        grid[trash1Row][0] = trash1.getTrash();
+        grid[trash2Row][0] = trash2.getTrash();
+        grid[trash3Row][0] = trash3.getTrash();
     }
 }

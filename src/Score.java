@@ -18,11 +18,11 @@ public class Score {
          score = 0;
          highestScore = 0;
          lives = 3;
-         seconds = time.getSecondsPassed();
+//         seconds = time.getSecondsPassed();
          gameOver = false;
     }
 
-    public int roundNumber(double input) { // helper class
+    private int roundNumber(double input) { // helper class
         int roundedNumber;
         roundedNumber = (int) Math.rint(input);
         return roundedNumber;

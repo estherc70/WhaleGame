@@ -5,13 +5,16 @@ public class Time {
 
     private int secondsPassed = 0;
 
+    Score score = new Score();
+
     Timer myTimer = new Timer();
     TimerTask task = new TimerTask() {
         public void run() {
-            if (secondsPassed < 10) {
+            if (secondsPassed < 30) {
 //                System.out.println(secondsPassed);
                 secondsPassed ++;
-
+            } else {
+                score.setGameOver(true);
             }
         }
 
