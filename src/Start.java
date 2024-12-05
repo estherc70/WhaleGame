@@ -3,13 +3,12 @@ public class Start {
     private Grid grid;
     private Time time;
     private Score score;
-    private int start;
 
     public Start() {
         grid = new Grid();
         time = new Time();
         score = new Score();
-        start = 0;
+
 
         mainMenu();
         startGame();
@@ -38,7 +37,6 @@ public class Start {
         time.start();
         score.setGameOver(true);
         while (score.getGameOver()) {
-            start++;
             grid.printGrid();
             grid.moveWhale();
 
