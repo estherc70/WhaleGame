@@ -6,23 +6,17 @@ public class Grid {
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"},
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"}};
     private Whale whale;
-    private Trash trash2;
-    private Trash trash3;
+    private Trash trash1, trash2, trash3;
     private int whaleRow;
-    private int trash1Row;
-    private int trash2Row;
-    private int trash3Row;
-    private int trash1Col;
-    private int trash2Col;
-    private int trash3Col;
-    private int prev;
-    private int moves;
+    private int trash1Row , trash2Row, trash3Row;
+    private int trash1Col, trash2Col, trash3Col;
+    private int prev, moves;
 
-    Trash trash1 = new Trash();
     //constructor
     public Grid() {
         whale = new Whale();
         whaleRow = whale.getRow();
+        trash1 = new Trash();
         trash2 = new Trash();
         trash3 = new Trash();
         prev = 0;
@@ -142,6 +136,5 @@ public class Grid {
     public boolean collide() {
         //if (grid.)
         return false;
-
     }
 }

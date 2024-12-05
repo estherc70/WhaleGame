@@ -6,7 +6,6 @@ public class Score {
        - [Create a helper class to round the score to the nearest whole number]
        - The highest score will be kept track of
      */
-
     private int score;
     private int highestScore;
     private int lives;

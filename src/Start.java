@@ -39,8 +39,6 @@ public class Start {
         while (score.getGameOver()) {
             grid.printGrid();
             grid.moveWhale();
-
-
         }
     }
 }
