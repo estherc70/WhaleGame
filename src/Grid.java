@@ -138,4 +138,10 @@ public class Grid {
         grid[trash2Row][0] = trash2.getTrash();
         grid[trash3Row][0] = trash3.getTrash();
     }
+
+    public boolean collide() {
+        //if (grid.)
+        return false;
+
+    }
 }
