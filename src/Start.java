@@ -32,7 +32,7 @@ public class Start {
 
     public void startGame() {
         grid.placeWhale();
-        grid.placeTrashs();
+        grid.placeTrashsInitial();
         time.start();
         score.setGameOver(true);
         while (score.getGameOver()) {
