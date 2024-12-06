@@ -5,8 +5,8 @@ public class Start {
     private Score score;
 
     public Start(Score score) {
-        this.score = new Score();
-        grid = new Grid();
+        this.score = score;
+        grid = new Grid(score);
         time = new Time(score);
     }
 
@@ -32,12 +32,9 @@ public class Start {
         grid.placeTrashsInitial();
         time.start();
         while (!score.getGameOver()) {
+            System.out.println(score.getGameOver());
             grid.printGrid();
             grid.moveWhale();
-            if (grid.collide()) {
-                System.out.println("Ouch! You ran into the trash, you lost one life");
-                System.out.println(score.getLives());
-            }
         }
     }
 

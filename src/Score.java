@@ -10,12 +10,14 @@ public class Score {
     private int highestScore;
     private int lives;
     private Time time;
+    private boolean gameOver;
 
     public Score() {
          score = 0;
          highestScore = 0;
          lives = 3;
          time = new Time(this);
+         gameOver = false;
     }
 
     private int roundNumber(double input) { // helper class
@@ -41,13 +43,13 @@ public class Score {
 
     public void updateLives() {
         lives = lives - 1;
+        System.out.println(getGameOver());
+        if (lives < 0) {
+            gameOver = true;
+        }
     }
 
     public boolean getGameOver() {
-        if (lives == 0) { // implement timer when Time.getSecondsPassed() is not null
-            return true;
-        } else {
-            return false;
-        }
+        return gameOver;
     }
 }

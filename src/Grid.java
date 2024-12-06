@@ -10,11 +10,12 @@ public class Grid {
     private int whaleRow;
     private int trash1Row , trash2Row, trash3Row;
     private int trash1Col, trash2Col, trash3Col;
+    private int trash1RowPrev, trash2RowPrev,trash3RowPrev;
     private int prev, moves;
     private Score score;
 
     //constructor
-    public Grid() {
+    public Grid(Score score) {
         whale = new Whale();
         whaleRow = whale.getRow();
         trash1 = new Trash();
@@ -25,7 +26,7 @@ public class Grid {
         trash2Col = trash2.getTrash2Col();
         trash3Col = trash3.getTrash3Col();
         moves = 0;
-        score = new Score();
+        this.score = score;
     }
 
 
@@ -82,10 +83,34 @@ public class Grid {
             setBlue(prev);
             if (moves == 1) {
                 placeTrashs2();
+                if (whaleRow == trash1Row ||
+                        whaleRow == trash2Row ||
+                        whaleRow == trash3Row) {
+                    grid[whaleRow][0] = "\uD83D\uDCA5";
+                    System.out.println("Ouch! You ran into the trash, you lost one life");
+                    score.updateLives();
+                    System.out.println(score.getLives());
+                }
+                trash1RowPrev = trash1Row;
+                trash2RowPrev = trash2Row;
+                trash3RowPrev = trash3Row;
                 setBlueTrash2();
                 moves++;
             }else if (moves == 2){
                 setBlueTrash3();
+                if (whaleRow == trash1Row ||
+                        whaleRow == trash2Row ||
+                        whaleRow == trash3Row) {
+                    grid[whaleRow][0] = whale.getWhale();
+                }
+                if (whaleRow == trash1RowPrev ||
+                        whaleRow == trash2RowPrev ||
+                        whaleRow == trash3RowPrev) {
+                    grid[whaleRow][0] = "\uD83D\uDCA5";
+                    System.out.println("Ouch! You ran into the trash, you lost one life");
+                    score.updateLives();
+                    System.out.println(score.getLives());
+                }
                 placeTrashsInitial();
                 moves = 0;
             } else {
@@ -136,11 +161,22 @@ public class Grid {
     }
 
     public boolean collide() {
-        if (((trash1Col == 0) && (whaleRow == trash1Row))||
-                ((trash2Col == 0) && (whaleRow == trash2Row)) ||
-                ((trash3Col == 0) && (whaleRow == trash3Row))) {
+//        if (((trash1Col == 0) && (whaleRow == trash1Row))||
+//                ((trash2Col == 0) && (whaleRow == trash2Row)) ||
+//                ((trash3Col == 0) && (whaleRow == trash3Row))) {
+//            grid[whaleRow][0] = "\uD83D\uDCA5";
+//            score.updateLives();
+//            System.out.println("collided");
+//            return true;
+//        } else {
+//            System.out.println("not collided");
+//            return false;
+//        }
+
+        if (whaleRow == trash1Row ||
+                whaleRow == trash2Row ||
+                whaleRow == trash3Row) {
             grid[whaleRow][0] = "\uD83D\uDCA5";
-            score.updateLives();
             return true;
         } else {
             return false;
