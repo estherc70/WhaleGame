@@ -135,7 +135,7 @@ public class Grid {
         grid[trash3Row][0] = trash3.getTrash();
     }
 
-    public boolean collide() {
+    public boolean collide() { // is trash1Col the position of the column or .getTrash1Col?
         if (((trash1Col == 0) && (whaleRow == trash1Row))||
                 ((trash2Col == 0) && (whaleRow == trash2Row)) ||
                 ((trash3Col == 0) && (whaleRow == trash3Row))) {
