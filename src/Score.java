@@ -9,7 +9,6 @@ public class Score {
     private int score;
     private int highestScore;
     private int lives;
-    private int seconds;
     private Time time;
     private boolean gameOver;
 
@@ -17,7 +16,6 @@ public class Score {
          score = 0;
          highestScore = 0;
          lives = 3;
-//         seconds = time.getSecondsPassed();
          gameOver = false;
     }
 
@@ -28,7 +26,7 @@ public class Score {
     }
 
     public int getScore() {
-        return score;
+        return roundNumber(time.getSecondsPassed() * 3.14);
     }
 
     public int getHighestScore() {
@@ -42,27 +40,15 @@ public class Score {
         return lives;
     }
 
-    public void convertToPoints() {
-        score = roundNumber(seconds * 3.14); //ROUNDING CLASS NEEDED
-    }
-
     public void updateLives() {
-//        if (whalePosition == trashPosition) {
-//            lives--;
-//        }
-//        [set game over to true if lives = 0]
-
+        lives = lives - 1;
     }
 
     public boolean getGameOver() {
-     return gameOver;
-    }
-
-    public void setGameOver(boolean input) {
-        if (input == true) {
-            gameOver = true; // use for timer class when timer is over the set time (e.g 5 minutes)
+        if (lives == 0) { //needs timer
+            return true;
         } else {
-            gameOver = false;
+            return false;
         }
     }
 }

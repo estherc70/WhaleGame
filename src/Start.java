@@ -8,10 +8,6 @@ public class Start {
         grid = new Grid();
         time = new Time();
         score = new Score();
-
-
-        mainMenu();
-        startGame();
     }
 
     public void mainMenu() {
@@ -35,10 +31,32 @@ public class Start {
         grid.placeWhale();
         grid.placeTrashsInitial();
         time.start();
-        score.setGameOver(true);
-        while (score.getGameOver()) {
+        while (!score.getGameOver()) {
             grid.printGrid();
             grid.moveWhale();
+            if (grid.collide()) {
+                System.out.println("Ouch! You ran into the trash, you lost one life");
+                System.out.println(score.getLives());
+            }
         }
+    }
+
+    public void printInfo() {
+        System.out.println("--------------------------------------------------------------");
+        System.out.println("|                          Game over!                        |");
+        System.out.println("|                                                            |");
+        System.out.println("| You scored: " + score.getScore() + "                          |");
+        if (score.getScore() > score.getHighestScore()) {
+            System.out.println("| Congrats! You beat the previous highest score of " + score.getHighestScore() + "     |");
+        } else if (score.getScore() < score.getHighestScore()) {
+            System.out.println("| The highest score is: " + score.getHighestScore() + "            |");
+            System.out.println("| Try beating it again next time!");
+        } else {
+            System.out.println("| Whoa! You got the same score as the previous high score!   |");
+            System.out.println("| Maybe you can beat it next time!                           |");
+        }
+        System.out.println("|                                                            |");
+        System.out.println("|                     Thanks for playing!                    |");
+        System.out.println("--------------------------------------------------------------");
     }
 }

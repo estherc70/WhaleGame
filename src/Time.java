@@ -10,15 +10,12 @@ public class Time {
     Timer myTimer = new Timer();
     TimerTask task = new TimerTask() {
         public void run() {
-            if (secondsPassed < 30) {
-//                System.out.println(secondsPassed);
-                secondsPassed ++;
+            if (!score.getGameOver()) {
+                secondsPassed++;
             } else {
-                score.setGameOver(true);
+                myTimer.cancel();
             }
         }
-
-
     };
 
     public void start() {

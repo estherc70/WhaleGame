@@ -11,6 +11,7 @@ public class Grid {
     private int trash1Row , trash2Row, trash3Row;
     private int trash1Col, trash2Col, trash3Col;
     private int prev, moves;
+    private Score score;
 
     //constructor
     public Grid() {
@@ -24,6 +25,7 @@ public class Grid {
         trash2Col = trash2.getTrash2Col();
         trash3Col = trash3.getTrash3Col();
         moves = 0;
+        score = new Score();
     }
 
 
@@ -134,7 +136,14 @@ public class Grid {
     }
 
     public boolean collide() {
-        //if (grid.)
-        return false;
+        if (((trash1Col == 0) && (whaleRow == trash1Row))||
+                ((trash2Col == 0) && (whaleRow == trash2Row)) ||
+                ((trash3Col == 0) && (whaleRow == trash3Row))) {
+            grid[whaleRow][0] = "\uD83D\uDCA5";
+            score.updateLives();
+            return true;
+        } else {
+            return false;
+        }
     }
 }
