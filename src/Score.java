@@ -15,7 +15,7 @@ public class Score {
          score = 0;
          highestScore = 0;
          lives = 3;
-         time = new Time();
+         time = new Time(this);
     }
 
     private int roundNumber(double input) { // helper class

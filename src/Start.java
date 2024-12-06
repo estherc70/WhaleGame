@@ -4,10 +4,10 @@ public class Start {
     private Time time;
     private Score score;
 
-    public Start() {
+    public Start(Score score) {
+        this.score = new Score();
         grid = new Grid();
-        time = new Time();
-        score = new Score();
+        time = new Time(score);
     }
 
     public void mainMenu() {
