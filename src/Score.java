@@ -26,8 +26,13 @@ public class Score {
         return roundedNumber;
     }
 
+    public void updateScore() {
+        // Calculate the score based on time and update the score field
+        score = roundNumber(time.getSecondsPassed() * 3.14);
+    }
+
     public int getScore() {
-        return roundNumber(time.getSecondsPassed() * 3.14);
+        return score;
     }
 
     public int getHighestScore() {
@@ -51,5 +56,9 @@ public class Score {
 
     public boolean getGameOver() {
         return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
     }
 }

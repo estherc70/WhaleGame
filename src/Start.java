@@ -32,17 +32,21 @@ public class Start {
         grid.placeTrashsInitial();
         time.start();
         while (!score.getGameOver()) {
+            score.updateScore();
             System.out.println(score.getGameOver());
+            System.out.println(time.getSecondsPassed());
+            System.out.println(score.getScore());
             grid.printGrid();
             grid.moveWhale();
         }
     }
 
     public void printInfo() {
+        double score1 = (time.getSecondsPassed() * 3.14);
         System.out.println("--------------------------------------------------------------");
         System.out.println("|                          Game over!                        |");
         System.out.println("|                                                            |");
-        System.out.println("| You scored: " + score.getScore() + "                          |");
+        System.out.println("| You scored: " + score1 + "                                              |");
         if (score.getScore() > score.getHighestScore()) {
             System.out.println("| Congrats! You beat the previous highest score of " + score.getHighestScore() + "     |");
         } else if (score.getScore() < score.getHighestScore()) {

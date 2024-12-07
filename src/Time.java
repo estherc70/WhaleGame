@@ -14,6 +14,9 @@ public class Time {
             public void run() {
                 if (!score.getGameOver()) {
                     secondsPassed++;
+                    if (getSecondsPassed() >= 30) {
+                        score.setGameOver(true);
+                    }
                 } else {
                     myTimer.cancel();
                 }
