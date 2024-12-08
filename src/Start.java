@@ -2,10 +2,10 @@ public class Start {
 
     private Grid grid;
     private Time time;
-    private Score score;
+    private Score score2;
 
     public Start(Score score) {
-        this.score = score;
+        score2 = score;
         grid = new Grid(score);
         time = new Time(score);
     }
@@ -31,11 +31,11 @@ public class Start {
         grid.placeWhale();
         grid.placeTrashsInitial();
         time.start();
-        while (!score.getGameOver()) {
-            score.updateScore();
-            System.out.println(score.getGameOver());
+        while (!score2.getGameOver()) {
+            score2.updateScore();
+            System.out.println(score2.getGameOver());
             System.out.println(time.getSecondsPassed());
-            System.out.println(score.getScore());
+            System.out.println(score2.getScore());
             grid.printGrid();
             grid.moveWhale();
         }
@@ -47,10 +47,10 @@ public class Start {
         System.out.println("|                          Game over!                        |");
         System.out.println("|                                                            |");
         System.out.println("| You scored: " + score1 + "                                              |");
-        if (score.getScore() > score.getHighestScore()) {
-            System.out.println("| Congrats! You beat the previous highest score of " + score.getHighestScore() + "     |");
-        } else if (score.getScore() < score.getHighestScore()) {
-            System.out.println("| The highest score is: " + score.getHighestScore() + "            |");
+        if (score2.getScore() > score2.getHighestScore()) {
+            System.out.println("| Congrats! You beat the previous highest score of " + score2.getHighestScore() + "     |");
+        } else if (score2.getScore() < score2.getHighestScore()) {
+            System.out.println("| The highest score is: " + score2.getHighestScore() + "            |");
             System.out.println("| Try beating it again next time!");
         } else {
             System.out.println("| Whoa! You got the same score as the previous high score!   |");

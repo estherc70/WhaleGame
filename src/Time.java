@@ -3,19 +3,19 @@ import java.util.TimerTask;
 
 public class Time {
     private int secondsPassed = 0;
-    private Score score;
+    private Score score1;
 
     private Timer myTimer = new Timer();
     private TimerTask task;
 
     public Time(Score score) {
-        this.score = score;
+        score1 = score;
         task = new TimerTask() {
             public void run() {
-                if (!score.getGameOver()) {
+                if (!score1.getGameOver()) {
                     secondsPassed++;
                     if (getSecondsPassed() >= 30) {
-                        score.setGameOver(true);
+                        score1.setGameOver(true);
                     }
                 } else {
                     myTimer.cancel();
