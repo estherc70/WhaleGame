@@ -8,6 +8,7 @@ public class Whale {
     private boolean up;
     private boolean down;
 
+    //constructor for whale
     public Whale() {
         whale = "\uD83D\uDC0B";
         scan = new Scanner(System.in);
@@ -20,10 +21,12 @@ public class Whale {
         return whale;
     }
 
+    //asks the user if they want to move the whale up or down
     public void askForMove() {
         System.out.print("\u001B[97mEnter move:\u001B[0m ");
         userMove = scan.nextLine();
         userMove = userMove.toLowerCase();
+        //checks to see if the user chose w or s and set them to the corresponding boolean respectively
         if (userMove.equals("w")) {
             up = true;
             down = false;
@@ -34,18 +37,22 @@ public class Whale {
         }
     }
 
+    //returns getUp boolean
     public boolean getUp() {
         return up;
     }
 
+    //returns getDown boolean
     public boolean getDown() {
         return down;
     }
 
+    //returns the row that whale is at right now
     public int getRow() {
         return row;
     }
 
+    //returns the user's move
     public String getUserMove() {
         return userMove;
     }
