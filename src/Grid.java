@@ -86,13 +86,9 @@ public class Grid {
                         whaleRow == trash2Row ||
                         whaleRow == trash3Row) {
                     grid[whaleRow][0] = "\uD83D\uDCA5";
-                    if (score.getLives() == 1) {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
-                        score.updateLives();
-                    } else {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! You ran into the trash, you lost one life\u001B[0m");
-                        score.updateLives();
-                    }
+                    System.out.println("Ouch! You ran into the trash, you lost one life");
+                    score.updateLives();
+                    System.out.println(score.getLives());
                 }
                 trash1RowPrev = trash1Row;
                 trash2RowPrev = trash2Row;
@@ -110,13 +106,9 @@ public class Grid {
                         whaleRow == trash2RowPrev ||
                         whaleRow == trash3RowPrev) {
                     grid[whaleRow][0] = "\uD83D\uDCA5";
-                    if (score.getLives() == 1) {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
-                        score.updateLives();
-                    } else {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! You ran into the trash, you lost one life\u001B[0m");
-                        score.updateLives();
-                    }
+                    System.out.println("Ouch! You ran into the trash, you lost one life");
+                    score.updateLives();
+                    System.out.println(score.getLives());
                 }
                 placeTrashsInitial();
                 moves = 0;
@@ -133,7 +125,7 @@ public class Grid {
             else {
                 whaleRow--;
             }
-            System.out.println("\u001B[38;5;210mOut of bound!\nEnter a new move!\u001B[0m");
+            System.out.println("Out of bound!\nEnter a new move!");
         }
     }
 
@@ -165,5 +157,28 @@ public class Grid {
         grid[trash1Row][0] = trash1.getTrash();
         grid[trash2Row][0] = trash2.getTrash();
         grid[trash3Row][0] = trash3.getTrash();
+    }
+
+    public boolean collide() {
+//        if (((trash1Col == 0) && (whaleRow == trash1Row))||
+//                ((trash2Col == 0) && (whaleRow == trash2Row)) ||
+//                ((trash3Col == 0) && (whaleRow == trash3Row))) {
+//            grid[whaleRow][0] = "\uD83D\uDCA5";
+//            score.updateLives();
+//            System.out.println("collided");
+//            return true;
+//        } else {
+//            System.out.println("not collided");
+//            return false;
+//        }
+
+        if (whaleRow == trash1Row ||
+                whaleRow == trash2Row ||
+                whaleRow == trash3Row) {
+            grid[whaleRow][0] = "\uD83D\uDCA5";
+            return true;
+        } else {
+            return false;
+        }
     }
 }
