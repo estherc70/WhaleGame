@@ -1,5 +1,5 @@
 public class Grid {
-
+    //creates the grid of the game
     private String[][] grid = {{"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"},
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"},
         {"\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6","\uD83D\uDFE6"},
@@ -28,7 +28,7 @@ public class Grid {
         moves = 0;
         this.score = score;
     }
-
+    //uses two for loops to print the grid
     public void printGrid() {
         for(String[] row : grid) {
             for(String c : row) {
@@ -38,17 +38,23 @@ public class Grid {
         }
     }
 
+    //places the whale
+    //whaleRow is the updates row index to place the whale from if the user chose w or s
     public void placeWhale() {
         grid[whaleRow][0] = whale.getWhale();
     }
-
+    //sets the previous position of the whale blue once the whale gets placed in a new position
+    //row is the previous position of the whale
     public void setBlue(int row) {
         grid[row][0] = "\uD83D\uDFE6";
     }
 
+    //sets the previous positions of the trashes blue once the trash moves
+    //row and col are the previous positions of the trashes
     public void setBlue(int row, int col) {
         grid[row][col] = "\uD83D\uDFE6";
     }
+
 
     public void setBlueTrash() {
         setBlue(trash1Row,6);
@@ -68,6 +74,9 @@ public class Grid {
         setBlue(trash3Row,0);
     }
 
+    //moves the whale according to the user's move
+    //updates the index of the row accordingly
+    //also checks to see if user moved out of bound
     public void moveWhale() {
         prev = whaleRow;
         whale.askForMove();
@@ -129,6 +138,7 @@ public class Grid {
         }
     }
 
+    //checks to see if user if out of bound (out of the grid)
     public boolean checkOutOfBound() {
         if (whaleRow > 4 || whaleRow < 0) {
             return true;

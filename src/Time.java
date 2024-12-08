@@ -8,6 +8,7 @@ public class Time {
     private Timer myTimer = new Timer();
     private TimerTask task;
 
+    //creates the seconds timer
     public Time(Score score) {
         score1 = score;
         task = new TimerTask() {
