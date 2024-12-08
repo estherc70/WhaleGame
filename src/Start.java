@@ -1,15 +1,18 @@
 public class Start {
 
+    //instance variables
     private Grid grid;
     private Time time;
     private Score score;
 
+    //constructor class
     public Start(Score score) {
         this.score = score;
         grid = new Grid(score);
         time = new Time(score);
     }
 
+    //prints out the main menu
     public void mainMenu() {
         System.out.println();
         System.out.println("--------------------------------------------------------------");
@@ -28,6 +31,7 @@ public class Start {
         System.out.println("--------------------------------------------------------------");
     }
 
+    //starts the game
     public void startGame() {
         grid.placeWhale();
         grid.placeTrashsInitial();
@@ -39,12 +43,15 @@ public class Start {
             printEndingInfo();
         }
     }
+
+    //prints out the game info after the game ends
     public void printEndingInfo() {
         if (score.getGameOver()) {
             printInfo();
         }
     }
 
+    //prints out the game info
     public void printInfo() {
         System.out.println();
         System.out.println("--------------------------------------------------------------");

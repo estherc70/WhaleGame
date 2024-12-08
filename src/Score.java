@@ -5,11 +5,14 @@ public class Score {
        the minutes by 3.14
        - [Create a helper class to round the score to the nearest whole number]
      */
+
+    //instance variables
     private int score;
     private int lives;
     private int time;
     private boolean gameOver;
 
+    //constructor
     public Score() {
          score = 0;
          lives = 3;
@@ -17,25 +20,30 @@ public class Score {
          gameOver = false;
     }
 
+    //helper class to round the score to the nearest int
     private int roundNumber(double input) { // helper class
         int roundedNumber;
         roundedNumber = (int) Math.rint(input);
         return roundedNumber;
     }
 
+    //updates the seconds passed from the timer class
     public void updateTime(int input) {
         time = input;
     }
 
+    //converts the seconds passed into score points by multiplying by 3.14
     public int getScore() {
         score = roundNumber(time * 3.14);
         return score;
     }
 
+    //get method for lives
     public int getLives() {
         return lives;
     }
 
+    //updates the lives after each collision
     public void updateLives() {
         lives = lives - 1;
         if (lives <= 0) {
@@ -43,10 +51,12 @@ public class Score {
         }
     }
 
+    //get method for game over
     public boolean getGameOver() {
         return gameOver;
     }
 
+    //set method for game over
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
     }
