@@ -7,14 +7,12 @@ public class Score {
        - The highest score will be kept track of
      */
     private int score;
-    private int highestScore;
     private int lives;
     private int time;
     private boolean gameOver;
 
     public Score() {
          score = 0;
-         highestScore = 0;
          lives = 3;
          time = 0;
          gameOver = false;
@@ -30,20 +28,9 @@ public class Score {
         time = input;
     }
 
-    public int getTime() {
-        return time;
-    }
-
     public int getScore() {
         score = roundNumber(time * 3.14);
         return score;
-    }
-
-    public int getHighestScore() {
-        if (score > highestScore) {
-            highestScore = score;
-        }
-        return highestScore;
     }
 
     public int getLives() {
