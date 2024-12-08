@@ -3,22 +3,24 @@ import java.util.TimerTask;
 
 public class Time {
     private int secondsPassed = 0;
-    private Score score1;
+    private Score score;
 
     private Timer myTimer = new Timer();
     private TimerTask task;
 
     public Time(Score score) {
-        score1 = score;
+        this.score = score;
         task = new TimerTask() {
             public void run() {
-                if (!score1.getGameOver()) {
+                if (!score.getGameOver()) {
                     secondsPassed++;
+                    updateTimeInScore();
                     if (getSecondsPassed() >= 30) {
-                        score1.setGameOver(true);
+                        score.setGameOver(true);
                     }
                 } else {
                     myTimer.cancel();
+
                 }
             }
         };
@@ -31,5 +33,10 @@ public class Time {
     public int getSecondsPassed() {
         return secondsPassed;
     }
+
+    public void updateTimeInScore() {
+        score.updateTime(secondsPassed);
+    }
+
 }
 

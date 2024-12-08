@@ -9,14 +9,14 @@ public class Score {
     private int score;
     private int highestScore;
     private int lives;
-    private Time time;
+    private int time;
     private boolean gameOver;
 
     public Score() {
          score = 0;
          highestScore = 0;
          lives = 3;
-         time = new Time(this);
+         time = 0;
          gameOver = false;
     }
 
@@ -26,12 +26,16 @@ public class Score {
         return roundedNumber;
     }
 
-    public void updateScore() {
-        // Calculate the score based on time and update the score field
-        score = roundNumber(time.getSecondsPassed() * 3.14);
+    public void updateTime(int input) {
+        time = input;
+    }
+
+    public int getTime() {
+        return time;
     }
 
     public int getScore() {
+        score = roundNumber(time * 3.14);
         return score;
     }
 
@@ -48,8 +52,7 @@ public class Score {
 
     public void updateLives() {
         lives = lives - 1;
-        System.out.println(getGameOver());
-        if (lives < 0) {
+        if (lives <= 0) {
             gameOver = true;
         }
     }

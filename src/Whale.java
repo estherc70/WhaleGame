@@ -21,7 +21,7 @@ public class Whale {
     }
 
     public void askForMove() {
-        System.out.print("Enter move: ");
+        System.out.print("\u001B[97mEnter move:\u001B[0m ");
         userMove = scan.nextLine();
         userMove = userMove.toLowerCase();
         if (userMove.equals("w")) {

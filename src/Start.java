@@ -2,17 +2,18 @@ public class Start {
 
     private Grid grid;
     private Time time;
-    private Score score2;
+    private Score score;
 
     public Start(Score score) {
-        score2 = score;
+        this.score = score;
         grid = new Grid(score);
         time = new Time(score);
     }
 
     public void mainMenu() {
+        System.out.println();
         System.out.println("--------------------------------------------------------------");
-        System.out.println("|                 \u001B[97mWelcome to the \u001B[1m\u001B[38;5;117mWhale Game\u001B[0m                  |");
+        System.out.println("|                 \u001B[97mWelcome to the \u001B[1m\u001B[38;5;117mWhale Game\u001B[0m \uD83D\uDC0B               |");
         System.out.println("|                                                            |");
         System.out.println("| \u001B[38;5;153mIn this game, you have to move the whale up and down to\u001B[0m    |");
         System.out.println("| \u001B[38;5;153mavoid the incoming trash. You start with three lives and\u001B[0m   |");
@@ -32,39 +33,31 @@ public class Start {
         grid.placeTrashsInitial();
         time.start();
         mainMenu();
-        while (!score2.getGameOver()) {
-            score2.updateScore();
-            System.out.println(score2.getGameOver());
-            System.out.println(time.getSecondsPassed());
-            System.out.println(score2.getScore());
+        while (!score.getGameOver()) {
             grid.printGrid();
             grid.moveWhale();
             printEndingInfo();
         }
     }
     public void printEndingInfo() {
-        if (score2.getGameOver()) {
+        if (score.getGameOver()) {
             printInfo();
         }
     }
 
     public void printInfo() {
-        double score1 = (time.getSecondsPassed() * 3.14);
+        System.out.println();
         System.out.println("--------------------------------------------------------------");
-        System.out.println("|                          Game over!                        |");
+        System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                        |");
         System.out.println("|                                                            |");
-        System.out.println("| You scored: " + score1 + "                                              |");
-        if (score2.getScore() > score2.getHighestScore()) {
-            System.out.println("| Congrats! You beat the previous highest score of " + score2.getHighestScore() + "     |");
-        } else if (score2.getScore() < score2.getHighestScore()) {
-            System.out.println("| The highest score is: " + score2.getHighestScore() + "            |");
-            System.out.println("| Try beating it again next time!");
+        if (score.getScore() <= 9) {
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
         } else {
-            System.out.println("| Whoa! You got the same score as the previous high score!   |");
-            System.out.println("| Maybe you can beat it next time!                           |");
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                  |");
         }
         System.out.println("|                                                            |");
-        System.out.println("|                     Thanks for playing!                    |");
+        System.out.println("|                     \u001B[38;5;153mThanks for playing!\u001B[0m                    |");
+        System.out.println("|      \u001B[97mWe hope you enjoyed playing \u001B[1m\u001B[38;5;117mThe Whale Game\u001B[0m \uD83D\uDC0B         |");
         System.out.println("--------------------------------------------------------------");
     }
 }
