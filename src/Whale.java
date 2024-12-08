@@ -15,7 +15,7 @@ public class Whale {
         up = false;
         down = false;
     }
-
+    //returns whale
     public String getWhale() {
         return whale;
     }

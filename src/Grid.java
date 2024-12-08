@@ -29,7 +29,6 @@ public class Grid {
         this.score = score;
     }
 
-
     public void printGrid() {
         for(String[] row : grid) {
             for(String c : row) {

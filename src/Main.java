@@ -4,8 +4,5 @@ public class Main {
         Start start = new Start(score);
         start.mainMenu();
         start.startGame();
-        if (score.getGameOver()) {
-            start.printInfo();
-        }
     }
 }

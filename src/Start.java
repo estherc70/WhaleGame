@@ -31,6 +31,7 @@ public class Start {
         grid.placeWhale();
         grid.placeTrashsInitial();
         time.start();
+        mainMenu();
         while (!score2.getGameOver()) {
             score2.updateScore();
             System.out.println(score2.getGameOver());
@@ -38,6 +39,12 @@ public class Start {
             System.out.println(score2.getScore());
             grid.printGrid();
             grid.moveWhale();
+            printEndingInfo();
+        }
+    }
+    public void printEndingInfo() {
+        if (score2.getGameOver()) {
+            printInfo();
         }
     }
 
