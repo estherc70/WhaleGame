@@ -188,6 +188,8 @@ public class Grid {
             grid[whaleRow][0] = "\uD83D\uDCA5";
             return true;
         }
-        return false;
+        else {
+            return false;
+        }
     }
 }
