@@ -4,7 +4,6 @@ public class Score {
        - There is also a score system where the seconds a player survives for is converted to points by multiplying
        the minutes by 3.14
        - [Create a helper class to round the score to the nearest whole number]
-       - The highest score will be kept track of
      */
     private int score;
     private int lives;
