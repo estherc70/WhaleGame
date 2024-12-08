@@ -187,8 +187,7 @@ public class Grid {
                 whaleRow == trash3Row) {
             grid[whaleRow][0] = "\uD83D\uDCA5";
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
