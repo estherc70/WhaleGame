@@ -58,9 +58,9 @@ public class Start {
         System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                         |");
         System.out.println("|                                                             |");
         if (score.getScore() <= 9) {
-            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                    |");
         } else {
-            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                  |");
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
         }
         System.out.println("|                                                             |");
         System.out.println("|  \u001B[38;5;231mAlthough this game gives the whale three lives, it isn't\u001B[0m   |");
