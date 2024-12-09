@@ -12,6 +12,19 @@ public class Start {
         time = new Time(score);
     }
 
+    //starts the game by calling necessary methods
+    public void startGame() {
+        grid.placeWhale();
+        grid.placeTrashsInitial();
+        time.start();
+        mainMenu();
+        while (!score.getGameOver()) {
+            grid.printGrid();
+            grid.moveWhale();
+            printEndingInfo();
+        }
+    }
+
     //prints out the main menu and uses ANSI Escape Sequences to modify text
     public void mainMenu() {
         System.out.println();
@@ -29,19 +42,6 @@ public class Start {
         System.out.println("| \u001B[97mTo move down: input\u001B[0m \u001B[38;5;230m\u001B[3m\"s\"\u001B[0m                                    |");
         System.out.println("|                                                            |");
         System.out.println("--------------------------------------------------------------");
-    }
-
-    //starts the game by calling necessary methods
-    public void startGame() {
-        grid.placeWhale();
-        grid.placeTrashsInitial();
-        time.start();
-        mainMenu();
-        while (!score.getGameOver()) {
-            grid.printGrid();
-            grid.moveWhale();
-            printEndingInfo();
-        }
     }
 
     //prints out the game info after the game ends
