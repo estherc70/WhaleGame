@@ -7,6 +7,7 @@ public class Start {
     private Time time;
     private Score score;
     private Scanner scanner;
+    private Whale whale;
 
     //constructor class
     public Start(Score score) {
@@ -46,9 +47,18 @@ public class Start {
         return userInput;
     }
 
+    public String askName() {
+        System.out.print("Enter whale name: ");
+        String name = scanner.nextLine();
+        whale = new Whale(name);
+        return name;
+    }
+
     //starts the game by calling necessary methods//
     public void startGame() {
         grid.placeWhale();
+        askName();
+        whale.nameLength();
         String emojiChoice = askEmoji();
         Trash customTrash = new Trash(emojiChoice);
         grid.setTrashEmoji(customTrash);

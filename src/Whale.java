@@ -7,6 +7,8 @@ public class Whale {
     private int row;
     private boolean up;
     private boolean down;
+    public String name;
+
 
     //constructor for whale
     public Whale() {
@@ -15,6 +17,17 @@ public class Whale {
         row = 2;
         up = false;
         down = false;
+    }
+
+    //constructor for whale with a name
+    public Whale(String name) {
+        this.name = name;
+    }
+
+    public void nameLength() {
+        if (name.length() > 5) {
+            System.out.println("Wow you have a long name!");
+        }
     }
     //returns whale
     public String getWhale() {
