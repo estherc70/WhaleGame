@@ -7,7 +7,6 @@ public class Start {
     private Time time;
     private Score score;
     private Scanner scanner;
-    private Trash trash;
 
     //constructor class
     public Start(Score score) {
@@ -15,7 +14,6 @@ public class Start {
         grid = new Grid(score);
         time = new Time(score);
         scanner = new Scanner(System.in);
-        trash = new Trash();
     }
 
     //prints out the main menu and uses ANSI Escape Sequences to modify text
@@ -39,22 +37,22 @@ public class Start {
 
     public String askEmoji() {
         System.out.print("Which trash emoji would you want? \nDo you want a wastebasket emoji, canned food, or shoes?:");
-        String input = (scanner.nextLine()).toLowerCase();
+        String userInput = (scanner.nextLine()).toLowerCase();
 
-        while (!input.equals("wastebasket") && !input.equals("canned food") && !input.equals("shoes")) {
-            System.out.println("Invalid input. Please choose either 'wastebasket', 'canned food', or 'shoes'.");
-            input = scanner.nextLine().trim().toLowerCase();
+        while (!userInput.equals("wastebasket") && !userInput.equals("canned food") && !userInput.equals("shoes")) {
+            System.out.println("Invalid input. Please choose either wastebasket, canned food, or shoes.");
+            userInput = scanner.nextLine().trim().toLowerCase();
         }
-        return input;
+        return userInput;
     }
 
-    //starts the game by calling necessary methods
+    //starts the game by calling necessary methods//
     public void startGame() {
         grid.placeWhale();
-        String emojiChoice = askEmoji();  // Ask for emoji once and store it
-        Trash customTrash = new Trash(emojiChoice);  // Create a custom Trash object
-        grid.setTrashEmoji(customTrash);  // Set the emoji for the grid
-        grid.placeTrashsInitial();  // Place the trash on the grid initially
+        String emojiChoice = askEmoji();
+        Trash customTrash = new Trash(emojiChoice);
+        grid.setTrashEmoji(customTrash);
+        grid.placeTrashsInitial();
         time.start();
         mainMenu();
         while (!score.getGameOver()) {

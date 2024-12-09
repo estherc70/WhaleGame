@@ -6,6 +6,8 @@ public class Trash {
         trash1 = "\uD83D\uDDD1\uFE0F";
     }
 
+    /*An overloaded constructor that takes an input from start class.
+    Based on that input the trash1 instance var. gets set to a specific emoji.*/
     public Trash(String emojiInput) {
         if (emojiInput.equals("wastebasket")) {
             trash1 = "\uD83D\uDDD1\uFE0F";  // Wastebasket emoji
@@ -15,7 +17,7 @@ public class Trash {
             trash1 = "\uD83D\uDC5F";  // Shoes emoji
         } else {
             trash1 = "\uD83D\uDDD1\uFE0F";
-            System.out.println("Invalid input, defaulting to wastebasket.");
+            System.out.println("Invalid input, please try again!!!");
         }
     }
 
