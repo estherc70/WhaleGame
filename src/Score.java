@@ -13,8 +13,8 @@ public class Score {
     private boolean gameOver;
 
     //constructor
-    public Score() {
-         score = 0;
+    public Score(int initialScore) {
+         score = initialScore;
          lives = 3;
          time = 0;
          gameOver = false;
