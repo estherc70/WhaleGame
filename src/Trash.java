@@ -1,6 +1,5 @@
 public class Trash {
     private String trash1;
-    private Start start;
 
     public Trash() {
         trash1 = "\uD83D\uDDD1\uFE0F";

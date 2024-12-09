@@ -103,10 +103,10 @@ public class Grid {
                         whaleRow == trash3Row) {
                     grid[whaleRow][0] = "\uD83D\uDCA5"; //replaces the whale with an explosion emoji to replicate a collision
                     if (score.getLives() == 1) {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
+                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, " + score.getName() + " lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
                         score.updateLives();
                     } else {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! You ran into the trash, you lost one life\u001B[0m");
+                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! " + score.getName() +  " ran into the trash, you lost one life\u001B[0m");
                         score.updateLives();
                     }
                 }
@@ -127,10 +127,10 @@ public class Grid {
                         whaleRow == trash3RowPrev) {
                     grid[whaleRow][0] = "\uD83D\uDCA5"; //replaces the whale with an explosion emoji to replicate a collision
                     if (score.getLives() == 1) {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
+                        System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, " + score.getName() + " lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
                         score.updateLives();
                     } else {
-                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! You ran into the trash, you lost one life\u001B[0m");
+                        System.out.println("❗\u001B[0m\u001B[38;5;210mOuch! " + score.getName() + " ran into the trash, you lost one life\u001B[0m");
                         score.updateLives();
                     }
                 }

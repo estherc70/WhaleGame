@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Score {
     /* Game System:
        - The player starts with three lives and loses one if the whale collides with the trash on the next move
@@ -10,15 +12,36 @@ public class Score {
     private int score;
     private int lives;
     private int time;
+    private String name;
     private boolean gameOver;
+    private Scanner scanner;
+    private Whale whale;
 
     //constructor
     public Score(int initialScore) {
+         name = "";
          score = initialScore;
          lives = 3;
          time = 0;
          gameOver = false;
+        scanner = new Scanner(System.in);
     }
+
+    //asks for the user's name and stores it
+    public void askName() {
+        System.out.print("\u001B[97mEnter whale name: \u001B[0m");
+        name = scanner.nextLine();
+        whale = new Whale(name);
+        whale.nameLength();
+        System.out.println();
+    }
+
+    //get method to get the user's name
+    public String getName() {
+        return name;
+    }
+
+
 
     //helper class to round the score to the nearest int
     private int roundNumber(double input) {

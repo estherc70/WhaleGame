@@ -7,7 +7,6 @@ public class Start {
     private Time time;
     private Score score;
     private Scanner scanner;
-    private Whale whale;
 
     //constructor class
     public Start(Score score) {
@@ -37,34 +36,26 @@ public class Start {
     }
 
     public String askEmoji() {
-        System.out.print("Which trash emoji would you want? \nDo you want a wastebasket emoji, canned food, or shoes?:");
+        System.out.print("\u001B[97mWhich trash emoji would you want? \nDo you want a wastebasket emoji, canned food, or shoes?: \u001B[0m");
         String userInput = (scanner.nextLine()).toLowerCase();
 
         while (!userInput.equals("wastebasket") && !userInput.equals("canned food") && !userInput.equals("shoes")) {
-            System.out.println("Invalid input. Please choose either wastebasket, canned food, or shoes.");
+            System.out.println("\u001B[97mInvalid input. Please choose either wastebasket, canned food, or shoes.\u001B[0m");
             userInput = scanner.nextLine().trim().toLowerCase();
         }
         return userInput;
     }
 
-    public String askName() {
-        System.out.print("Enter whale name: ");
-        String name = scanner.nextLine();
-        whale = new Whale(name);
-        return name;
-    }
-
     //starts the game by calling necessary methods//
     public void startGame() {
+        mainMenu();
         grid.placeWhale();
-        askName();
-        whale.nameLength();
+        score.askName();
         String emojiChoice = askEmoji();
         Trash customTrash = new Trash(emojiChoice);
         grid.setTrashEmoji(customTrash);
         grid.placeTrashsInitial();
         time.start();
-        mainMenu();
         while (!score.getGameOver()) {
             grid.printGrid();
             grid.moveWhale();
@@ -82,17 +73,21 @@ public class Start {
     //prints out the game info
     public void printInfo() {
         System.out.println();
-        System.out.println("--------------------------------------------------------------");
-        System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                        |");
-        System.out.println("|                                                            |");
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                         |");
+        System.out.println("|                                                             |");
         if (score.getScore() <= 9) {
-            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                    |");
         } else {
-            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                  |");
+            System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
         }
-        System.out.println("|                                                            |");
-        System.out.println("|                     \u001B[38;5;153mThanks for playing!\u001B[0m                    |");
-        System.out.println("|      \u001B[97mWe hope you enjoyed playing \u001B[1m\u001B[38;5;117mThe Whale Game\u001B[0m \uD83D\uDC0B         |");
-        System.out.println("--------------------------------------------------------------");
+        System.out.println("|                                                             |");
+        System.out.println("|  \u001B[38;5;231mAlthough this game gives the whale three lives, it isn't\u001B[0m   |");
+        System.out.println("| \u001B[38;5;231mthe case in real life. So instead of hurting the habitat of\u001B[0m |");
+        System.out.println("|     \u001B[38;5;231mmarine species, make sure to clean after yourself!\u001B[0m      |");
+        System.out.println("|                                                             |");
+        System.out.println("|                     \u001B[38;5;153mThanks for playing!\u001B[0m                     |");
+        System.out.println("|      \u001B[97mWe hope you enjoyed playing \u001B[1m\u001B[38;5;117mThe Whale Game\u001B[0m \uD83D\uDC0B          |");
+        System.out.println("---------------------------------------------------------------");
     }
 }
