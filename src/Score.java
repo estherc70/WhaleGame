@@ -21,7 +21,7 @@ public class Score {
     }
 
     //helper class to round the score to the nearest int
-    private int roundNumber(double input) { // helper class
+    private int roundNumber(double input) {
         int roundedNumber;
         roundedNumber = (int) Math.rint(input);
         return roundedNumber;

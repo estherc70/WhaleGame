@@ -54,17 +54,21 @@ public class Start {
     //prints out the game info
     public void printInfo() {
         System.out.println();
-        System.out.println("--------------------------------------------------------------");
-        System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                        |");
-        System.out.println("|                                                            |");
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("|                          \u001B[38;5;203mGame over!\u001B[0m                         |");
+        System.out.println("|                                                             |");
         if (score.getScore() <= 9) {
             System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                   |");
         } else {
             System.out.println("| \u001B[38;5;231mYou scored:\u001B[0m \u001B[38;5;228m" + score.getScore() + " ⭐\u001B[0m \u001B[38;5;231mpoints \u001B[0m                                  |");
         }
-        System.out.println("|                                                            |");
-        System.out.println("|                     \u001B[38;5;153mThanks for playing!\u001B[0m                    |");
-        System.out.println("|      \u001B[97mWe hope you enjoyed playing \u001B[1m\u001B[38;5;117mThe Whale Game\u001B[0m \uD83D\uDC0B         |");
-        System.out.println("--------------------------------------------------------------");
+        System.out.println("|                                                             |");
+        System.out.println("|  \u001B[38;5;231mAlthough this game gives the whale three lives, it isn't\u001B[0m   |");
+        System.out.println("| \u001B[38;5;231mthe case in real life. So instead of hurting the habitat of\u001B[0m |");
+        System.out.println("|     \u001B[38;5;231mmarine species, make sure to clean after yourself!\u001B[0m      |");
+        System.out.println("|                                                             |");
+        System.out.println("|                     \u001B[38;5;153mThanks for playing!\u001B[0m                     |");
+        System.out.println("|      \u001B[97mWe hope you enjoyed playing \u001B[1m\u001B[38;5;117mThe Whale Game\u001B[0m \uD83D\uDC0B          |");
+        System.out.println("---------------------------------------------------------------");
     }
 }
