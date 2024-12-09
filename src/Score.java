@@ -13,15 +13,15 @@ public class Score {
     private boolean gameOver;
 
     //constructor
-    public Score() {
-         score = 0;
+    public Score(int initialScore) {
+         score = initialScore;
          lives = 3;
          time = 0;
          gameOver = false;
     }
 
     //helper class to round the score to the nearest int
-    private int roundNumber(double input) { // helper class
+    private int roundNumber(double input) {
         int roundedNumber;
         roundedNumber = (int) Math.rint(input);
         return roundedNumber;

@@ -26,7 +26,7 @@ public class Time {
             }
         };
     }
-
+    //
     public void start() {
         myTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
