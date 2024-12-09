@@ -24,6 +24,7 @@ public class Whale {
         this.name = name;
     }
 
+    //checks to see if the name of the whale is over 5 characters
     public void nameLength() {
         if (name.length() > 5) {
             System.out.println("Wow you have a long name!");
