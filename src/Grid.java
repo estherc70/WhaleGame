@@ -29,6 +29,12 @@ public class Grid {
         this.score = score;
     }
 
+    public void setTrashEmoji(Trash trash) {
+        trash1 = trash;
+        trash2 = trash;
+        trash3 = trash;
+    }
+
     //uses two for loops to print the grid
     public void printGrid() {
         for(String[] row : grid) {

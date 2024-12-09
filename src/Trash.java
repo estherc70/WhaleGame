@@ -1,8 +1,22 @@
 public class Trash {
-    final private String trash1;
+    private String trash1;
+    private Start start;
 
     public Trash() {
         trash1 = "\uD83D\uDDD1\uFE0F";
+    }
+
+    public Trash(String emojiInput) {
+        if (emojiInput.equals("wastebasket")) {
+            trash1 = "\uD83D\uDDD1\uFE0F";  // Wastebasket emoji
+        } else if (emojiInput.equals("canned food")) {
+            trash1 = "\uD83E\uDD6B";  // Canned food emoji
+        } else if (emojiInput.equals("shoes")) {
+            trash1 = "\uD83D\uDC5F";  // Shoes emoji
+        } else {
+            trash1 = "\uD83D\uDDD1\uFE0F";
+            System.out.println("Invalid input, defaulting to wastebasket.");
+        }
     }
 
     public String getTrash() {
