@@ -95,7 +95,7 @@ public class Grid {
                 if (whaleRow == trash1Row ||
                         whaleRow == trash2Row ||
                         whaleRow == trash3Row) {
-                    grid[whaleRow][0] = "\uD83D\uDCA5";
+                    grid[whaleRow][0] = "\uD83D\uDCA5"; //replaces the whale with an explosion emoji to replicate a collision
                     if (score.getLives() == 1) {
                         System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
                         score.updateLives();
@@ -119,7 +119,7 @@ public class Grid {
                 if (whaleRow == trash1RowPrev ||
                         whaleRow == trash2RowPrev ||
                         whaleRow == trash3RowPrev) {
-                    grid[whaleRow][0] = "\uD83D\uDCA5";
+                    grid[whaleRow][0] = "\uD83D\uDCA5"; //replaces the whale with an explosion emoji to replicate a collision
                     if (score.getLives() == 1) {
                         System.out.println("❗\u001B[0m\u001B[38;5;210mOh no, You lost all three lives!\u001B[0m \uD83D\uDC94 \uD83D\uDC94 \uD83D\uDC94");
                         score.updateLives();
@@ -143,11 +143,11 @@ public class Grid {
             else {
                 whaleRow--;
             }
-            System.out.println("\u001B[38;5;210mOut of bound!\nEnter a new move!\u001B[0m");
+            System.out.println("\u001B[38;5;210mOut of bound!\nEnter a new move!\u001B[0m"); //prevents the user from moving out of bounds
         }
     }
 
-    //checks to see if user if out of bound (out of the grid)
+    //checks to see if user is out of bound (out of the grid)
     public boolean checkOutOfBound() {
         if (whaleRow > 4 || whaleRow < 0) {
             return true;

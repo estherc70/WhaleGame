@@ -3,7 +3,7 @@ public class Score {
        - The player starts with three lives and loses one if the whale collides with the trash on the next move
        - There is also a score system where the seconds a player survives for is converted to points by multiplying
        the minutes by 3.14
-       - [Create a helper class to round the score to the nearest whole number]
+       - Created a helper method to round the score to the nearest whole number
      */
 
     //instance variables

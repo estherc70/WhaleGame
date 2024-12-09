@@ -12,7 +12,7 @@ public class Start {
         time = new Time(score);
     }
 
-    //prints out the main menu
+    //prints out the main menu and uses ANSI Escape Sequences to modify text
     public void mainMenu() {
         System.out.println();
         System.out.println("--------------------------------------------------------------");
@@ -31,7 +31,7 @@ public class Start {
         System.out.println("--------------------------------------------------------------");
     }
 
-    //starts the game
+    //starts the game by calling necessary methods
     public void startGame() {
         grid.placeWhale();
         grid.placeTrashsInitial();
