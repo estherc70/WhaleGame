@@ -38,7 +38,7 @@ public class Start {
     }
 
     public String askEmoji() {
-        System.out.print("Which trash emoji would you want? \nDo you want a wastebasket emoji, canned food, or shoes?:");
+        System.out.print("Which trash emoji would you want? \nDo you want a wastebasket emoji, canned food, or shoes?: ");
         String input = (scanner.nextLine()).toLowerCase();
 
         while (!input.equals("wastebasket") && !input.equals("canned food") && !input.equals("shoes")) {
