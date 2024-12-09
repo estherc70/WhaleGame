@@ -7,7 +7,6 @@ public class Start {
     private Time time;
     private Score score;
     private Scanner scanner;
-    private Trash trash;
 
     //constructor class
     public Start(Score score) {
@@ -15,7 +14,6 @@ public class Start {
         grid = new Grid(score);
         time = new Time(score);
         scanner = new Scanner(System.in);
-        trash = new Trash();
     }
 
     //prints out the main menu and uses ANSI Escape Sequences to modify text
