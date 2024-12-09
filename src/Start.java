@@ -41,7 +41,7 @@ public class Start {
         System.out.println();
 
         while (!userInput.equals("wastebasket") && !userInput.equals("canned food") && !userInput.equals("shoes")) {
-            System.out.println("\u001B[97mInvalid input. Please choose either wastebasket, canned food, or shoes.\u001B[0m");
+            System.out.println("\u001B[38;5;210mInvalid input. Please choose either wastebasket, canned food, or shoes.\u001B[0m");
             userInput = scanner.nextLine().trim().toLowerCase();
         }
         return userInput;
