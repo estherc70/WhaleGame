@@ -52,10 +52,6 @@ public class Whale {
         return row;
     }
 
-    //returns the user's move
-    public String getUserMove() {
-        return userMove;
-    }
 }
 
 
